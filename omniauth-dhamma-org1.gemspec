@@ -16,7 +16,7 @@ require File.expand_path(
 
 Gem::Specification.new do |spec|
   spec.name          = "omniauth-dhamma-org1"
-  spec.version       = OmniauthDhammaOrg1::VERSION
+  spec.version       = OmniAuth::DhammaOrg1::VERSION
   spec.authors       = ['Ernst Arnold']
   spec.email         = ['ernst@eka.one']
 

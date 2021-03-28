@@ -1,3 +1,3 @@
 # frozen_string_literal: true
 
-require 'omniauth/strategies/dhamm_org1'
+require 'omniauth/strategies/dhamma_org1'
