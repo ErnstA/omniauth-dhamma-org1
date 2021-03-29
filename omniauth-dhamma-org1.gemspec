@@ -2,12 +2,8 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-puts "****"
-puts "#{`ls`} +++ #{$LOAD_PATH}"
-
-#v_dir = File.expand_path(File.join('..', 'lib', 'omniauth-dhamma-org1'), __FILE__)
-#puts "****3 #{v_dir}"
-#require "#{v_dir}/version"
+# puts "****"
+# puts "#{`ls`} +++ #{$LOAD_PATH}"
 
 require File.expand_path(
   File.join('..', 'lib', 'omniauth', 'dhamma_org1', 'version'),
@@ -60,5 +56,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'oauth2', '~> 1.1'
   spec.add_runtime_dependency 'omniauth', '~> 2.0'
   spec.add_runtime_dependency 'omniauth-oauth2', '~> 1.7.1'
-    puts "****2"
+  # puts "****2"
 end
