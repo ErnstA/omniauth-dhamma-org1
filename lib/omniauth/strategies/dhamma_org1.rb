@@ -9,11 +9,11 @@ module OmniAuth
   module Strategies
     # Main class for DhammaOrg OAuth2 strategy.
     class DhammaOrg1 < OmniAuth::Strategies::OAuth2
-      ALLOWED_ISSUERS = ['op.eka.one', 'http://op.eka.one', 'https://op.eka.one'].freeze
-      BASE_SCOPE_URL = 'http://op.eka.one/auth/'
+      ALLOWED_ISSUERS = ['op.eka.one:3030', 'http://op.eka.one:3030', 'https://op.eka.one:3030'].freeze
+      BASE_SCOPE_URL = 'http://op.eka.one:3030/auth/'
       BASE_SCOPES = %w[profile email openid].freeze
       DEFAULT_SCOPE = 'email,profile'
-      USER_INFO_URL = 'http://op.eka.one/oauth2/v3/userinfo'
+      USER_INFO_URL = 'http://op.eka.one:3030/oauth2/v3/userinfo'
       IMAGE_SIZE_REGEXP = /(s\d+(-c)?)|(w\d+-h\d+(-c)?)|(w\d+(-c)?)|(h\d+(-c)?)|c/
 
       option :name, 'dhamma_org1'
@@ -26,7 +26,7 @@ module OmniAuth
 
       option :client_options,
              site: 'http://oauth2.eka.one',
-             authorize_url: 'http://op.eka.one/o/oauth2/auth',
+             authorize_url: 'http://op.eka.one:3030/o/oauth2/auth',
              token_url: '/token'
 
       def authorize_params
