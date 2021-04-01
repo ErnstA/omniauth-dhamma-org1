@@ -25,7 +25,7 @@ module OmniAuth
       option :authorized_client_ids, []
 
       option :client_options,
-             site: 'http://oauth2.eka.one',
+             site: 'http://op.eka.one:3030',
              authorize_url: 'http://op.eka.one:3030/oauth/authorize',
              token_url: '/token'
 
