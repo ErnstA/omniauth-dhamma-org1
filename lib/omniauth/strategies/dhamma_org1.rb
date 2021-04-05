@@ -21,7 +21,7 @@ module OmniAuth
       option :skip_image_info, true
       option :skip_jwt, false
       option :jwt_leeway, 60
-      option :authorize_options, %i[access_type hd login_hint prompt request_visible_actions scope state redirect_uri include_granted_scopes openid_realm device_id device_name]
+      option :authorize_options, %i[ hd login_hint prompt request_visible_actions scope state redirect_uri include_granted_scopes openid_realm device_id device_name]
       option :authorized_client_ids, []
 
       option :client_options,
@@ -36,7 +36,8 @@ module OmniAuth
           end
 
           params[:scope] = get_scope(params)
-          params[:access_type] = 'offline' if params[:access_type].nil?
+       #   params[:access_type] = 'offline' if params[:access_type].nil?
+          params[:nonce] = Time.now.to_i
           params['openid.realm'] = params.delete(:openid_realm) unless params[:openid_realm].nil?
 
           session['omniauth.state'] = params[:state] if params[:state]
