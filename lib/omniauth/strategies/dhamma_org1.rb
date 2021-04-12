@@ -29,7 +29,7 @@ module OmniAuth
              authorize_url: 'http://op.eka.one:3030/oauth/authorize',
              token_url: '/oauth/token'
       
-      option :prompt, ['login', 'consent']
+      option :prompt, ['consent']
 
       def authorize_params
         super.tap do |params|
