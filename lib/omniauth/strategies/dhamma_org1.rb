@@ -29,7 +29,8 @@ module OmniAuth
              authorize_url: 'http://op.eka.one:3030/oauth/authorize',
              token_url: '/oauth/token'
       
-      option :prompt, 'consent'
+      # leads to double render error! maybe it was not tested and is never used?
+      #option :prompt, 'consent'
 
       def authorize_params
         super.tap do |params|
