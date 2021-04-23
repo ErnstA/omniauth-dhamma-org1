@@ -9,11 +9,11 @@ module OmniAuth
   module Strategies
     # Main class for DhammaOrg OAuth2 strategy.
     class DhammaOrg1 < OmniAuth::Strategies::OAuth2
-      ALLOWED_ISSUERS = ['localhost:3030', 'http://localhost:3030', 'https://localhost:3030'].freeze
-      BASE_SCOPE_URL = 'http://localhost:3030/auth/'
+      ALLOWED_ISSUERS = ["http://#{ENV['IDP_HOST']}", "https://#{ENV['IDP_HOST']}", ENV['IDP_HOST']].freeze
+      BASE_SCOPE_URL = "http://#{ENV['IDP_HOST']}/auth/"
       BASE_SCOPES = %w[profile email openid].freeze
       DEFAULT_SCOPE = 'email,profile'
-      USER_INFO_URL = 'http://localhost:3030/oauth/userinfo'
+      USER_INFO_URL = "http://#{ENV['IDP_HOST']}/oauth/userinfo"
       IMAGE_SIZE_REGEXP = /(s\d+(-c)?)|(w\d+-h\d+(-c)?)|(w\d+(-c)?)|(h\d+(-c)?)|c/
 
       option :name, 'dhamma_org1'
@@ -25,8 +25,8 @@ module OmniAuth
       option :authorized_client_ids, []
 
       option :client_options,
-             site: 'http://localhost:3030',
-             authorize_url: 'http://localhost:3030/oauth/authorize',
+             site: "http://#{ENV['IDP_HOST']}",
+             authorize_url: "http://#{ENV['IDP_HOST']}/oauth/authorize",
              token_url: '/oauth/token'
       
       # leads to double render error! maybe it was not tested and is never used? I have fixed the doorkeeper gem for this
