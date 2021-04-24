@@ -9,7 +9,7 @@ module OmniAuth
   module Strategies
     # Main class for DhammaOrg OAuth2 strategy.
     class DhammaOrg1 < OmniAuth::Strategies::OAuth2
-      ALLOWED_ISSUERS = ["http://#{ENV['IDP_HOST']}", "https://#{ENV['IDP_HOST']}", ENV['IDP_HOST']].freeze
+      ALLOWED_ISSUERS = ["http://#{ENV['IDP_HOST']}", "https://#{ENV['IDP_HOST']}", ENV['IDP_HOST'], 'https://localhost:3030', 'http://localhost:3030', 'localhost:3030'].freeze
       BASE_SCOPE_URL = "http://#{ENV['IDP_HOST']}/auth/"
       BASE_SCOPES = %w[profile email openid].freeze
       DEFAULT_SCOPE = 'email,profile'
