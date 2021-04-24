@@ -30,7 +30,8 @@ module OmniAuth
              token_url: '/oauth/token'
       
       # leads to double render error! maybe it was not tested and is never used? I have fixed the doorkeeper gem for this
-      option :prompt, 'consent'
+      # option :prompt, 'consent'
+      # now try if consent is still sought without this option
 
       def authorize_params
         super.tap do |params|
